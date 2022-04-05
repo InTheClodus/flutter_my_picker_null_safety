@@ -470,7 +470,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
         TextButton(
           child: const Text(
             '取消',
-            style: TextStyle(color: Color(0xFF999999)),
+            style: TextStyle(color: Colors.black26),
           ),
           onPressed: () {
             widget.onCancel!();
@@ -485,7 +485,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
         TextButton(
           child: Text(
             '确认',
-            style: TextStyle(color: Theme.of(context).primaryColor),
+            style: TextStyle(color: Colors.blueAccent),
           ),
           onPressed: () {
             onConfirm();
