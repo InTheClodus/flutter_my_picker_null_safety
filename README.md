@@ -19,7 +19,8 @@
 ```
 dependencies:
   ...
-  flutter_my_picker: ^1.1.0
+  flutter_my_picker_null_safety:
+    git: https://github.com/InTheClodus/flutter_my_picker_null_safety.git
 ```
 
 如果你想自己发布包，但是发布的时候报错，可以看这里[发布教程](https://github.com/ma125120/study_note/blob/master/flutter/pub.md)
