@@ -203,8 +203,8 @@ class _MyDatePickerState extends State<MyDatePicker> {
     int max = 11;
     int min = 0;
 
-    max = now.year + yearIndex == widget.end!.year ? (widget.end!.month - 1) : 11;
-    min = now.year + yearIndex == widget.start!.year
+    max = now.year + yearIndex == widget.end?.year ? (widget.end!.month - 1) : 11;
+    min = now.year + yearIndex == widget.start?.year
         ? (widget.start!.month - 1)
         : 0;
 
@@ -222,11 +222,11 @@ class _MyDatePickerState extends State<MyDatePicker> {
     int max = days - 1;
     int min = 0;
 
-    max = (now.year + yearIndex == widget.end!.year &&
+    max = (now.year + yearIndex == widget.end?.year &&
             monthIndex == (widget.end!.month - 1))
         ? (widget.end!.day - 1)
         : max;
-    min = (now.year + yearIndex == widget.start!.year &&
+    min = (now.year + yearIndex == widget.start?.year &&
             monthIndex == (widget.start!.month - 1))
         ? (widget.start!.day - 1)
         : min;
@@ -264,21 +264,21 @@ class _MyDatePickerState extends State<MyDatePicker> {
   }
 
   setHourCtrl() {
-    int max = 23;
-    int min = 0;
+    int? max = 23;
+    int? min = 0;
 
-    max = (now.year + yearIndex == widget.end!.year &&
+    max = (now.year + yearIndex == widget.end?.year &&
             monthIndex == (widget.end!.month - 1) &&
             dayIndex == (widget.end!.day - 1))
-        ? widget.end!.hour
+        ? widget.end?.hour
         : max;
-    min = (now.year + yearIndex == widget.start!.year &&
+    min = (now.year + yearIndex == widget.start?.year &&
             monthIndex == (widget.start!.month - 1) &&
             dayIndex == (widget.start!.day - 1))
-        ? widget.start!.hour
+        ? widget.start?.hour
         : min;
 
-    scrollItem(hourIndex, hourScrollCtrl, min, max);
+    scrollItem(hourIndex, hourScrollCtrl, min??23, max??0);
   }
 
   String? stringIndexByDay(int index) {
@@ -315,23 +315,23 @@ class _MyDatePickerState extends State<MyDatePicker> {
   }
 
   setMinuteCtrl() {
-    int max = 59;
-    int min = 0;
+    int? max = 59;
+    int? min = 0;
 
-    max = (now.year + yearIndex == widget.end!.year &&
+    max = (now.year + yearIndex == widget.end?.year &&
             monthIndex == (widget.end!.month - 1) &&
             dayIndex == (widget.end!.day - 1) &&
             hourIndex == (widget.end!.hour))
-        ? widget.end!.minute
+        ? widget.end?.minute
         : max;
-    min = (now.year + yearIndex == widget.start!.year &&
+    min = (now.year + yearIndex == widget.start?.year &&
             monthIndex == (widget.start!.month - 1) &&
             dayIndex == (widget.start!.day - 1) &&
-            hourIndex == (widget.start!.hour))
-        ? widget.start!.minute
+            hourIndex == (widget.start?.hour))
+        ? widget.start?.minute
         : min;
 
-    scrollItem(minuteIndex, minuteScrollCtrl, min, max);
+    scrollItem(minuteIndex, minuteScrollCtrl, min??59, max??0);
   }
 
   String? stringIndexByHour(int index) {

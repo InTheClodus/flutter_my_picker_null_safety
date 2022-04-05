@@ -14,7 +14,7 @@ Map weekdays = {
 
 class MyDate {
   static DateTime getNow() {
-    return new DateTime.now();
+    return DateTime.now();
   }
 
   /// 不传参数时返回当前时间
